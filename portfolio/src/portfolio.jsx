@@ -98,6 +98,7 @@ function FadeIn({ children, delay = 0, className = "" }) {
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
       const savedTheme = window.localStorage.getItem("portfolio-theme");
@@ -179,6 +180,7 @@ export default function Portfolio() {
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   return (
@@ -243,6 +245,8 @@ export default function Portfolio() {
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         html { background: var(--bg); }
+        html, body { max-width: 100%; overflow-x: hidden; }
+        img { max-width: 100%; }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #f0f1f8; }
         ::-webkit-scrollbar-thumb { background: #a5b4fc; border-radius: 10px; }
@@ -367,18 +371,45 @@ export default function Portfolio() {
         .why-item:hover { border-color: #a5b4fc; background: rgba(99,102,241,0.06); transform: translateX(4px); }
         section { padding: 80px 0; }
         .responsive-grid { display: grid; gap: 20px; }
+        .nav-hamburger {
+          display: none; flex-direction: column; justify-content: center; gap: 5px;
+          width: 38px; height: 38px; background: none; border: none; cursor: pointer;
+          padding: 8px; border-radius: 8px; flex-shrink: 0;
+        }
+        .nav-hamburger span {
+          display: block; width: 100%; height: 2px; background: var(--nav-text);
+          transition: all 0.25s;
+        }
+        .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
         @media (max-width: 1024px) {
           .projects-grid, .skills-grid { grid-template-columns: 1fr !important; }
           section { padding: 70px 0; }
         }
         @media (max-width: 820px) {
           section { padding: 60px 0; }
-          .nav-links-wrap { flex-wrap: wrap; gap: 10px; justify-content: center; }
-          .nav-link { font-size: 0.82rem; padding: 8px 6px; }
           .hero { padding: 70px 18px 40px !important; }
           .about-grid { grid-template-columns: 1fr !important; }
           .skills-grid, .projects-grid { grid-template-columns: 1fr !important; }
           .card { width: 100%; }
+          .featured-grid { grid-template-columns: 1fr !important; }
+          .featured-icon { display: none !important; }
+          .featured-card { padding: 26px 22px !important; }
+
+          /* Collapsible mobile nav */
+          .nav-hamburger { display: flex; }
+          .nav-links-wrap {
+            position: fixed; top: 64px; left: 0; right: 0;
+            flex-direction: column; align-items: stretch; gap: 0;
+            background: var(--section-bg); border-bottom: 1px solid var(--card-border, #e8eaf6);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            max-height: 0; overflow: hidden; padding: 0 20px;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+          }
+          .nav-links-wrap.open { max-height: 400px; padding: 12px 20px 20px; }
+          .nav-link { width: 100%; text-align: left; padding: 12px 4px; font-size: 0.95rem; border-bottom: 1px solid rgba(148,163,184,0.15); }
+          .nav-links-wrap .btn-sm-ghost { width: 100%; margin-top: 12px; min-width: 0 !important; }
         }
         @media (max-width: 640px) {
           .hero-dot { display: none; }
@@ -386,23 +417,25 @@ export default function Portfolio() {
           .btn-primary, .btn-outline { width: 100%; justify-content: center; }
           .hero { padding: 60px 16px 30px !important; }
           .about-grid { gap: 24px !important; }
-          .nav-links-wrap { gap: 8px; }
+        }
+        @media (max-width: 380px) {
+          .nav-brand { font-size: 0.95rem !important; }
         }
       `}</style>
 
       {/* NAV */}
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: scrolled ? activeTheme.navBgScrolled : "transparent",
-        backdropFilter: scrolled ? "blur(16px)" : "none",
-        borderBottom: scrolled ? `1px solid ${activeTheme.navBorder}` : "1px solid transparent",
+        background: scrolled || menuOpen ? activeTheme.navBgScrolled : "transparent",
+        backdropFilter: scrolled || menuOpen ? "blur(16px)" : "none",
+        borderBottom: scrolled || menuOpen ? `1px solid ${activeTheme.navBorder}` : "1px solid transparent",
         transition: "all 0.3s",
       }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.1rem", color: activeTheme.navText, letterSpacing: "-0.01em" }}>
+          <span className="nav-brand" style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.1rem", color: activeTheme.navText, letterSpacing: "-0.01em" }}>
             <span className="gradient-text">Geetanjali Nishad</span>
           </span>
-          <div className="nav-links-wrap" style={{ display: "flex", gap: 18, alignItems: "center" }}>
+          <div className={`nav-links-wrap${menuOpen ? " open" : ""}`} style={{ display: "flex", gap: 18, alignItems: "center" }}>
             {NAV_LINKS.map(l => (
               <button key={l} className="nav-link" onClick={() => scrollTo(l.toLowerCase())}>{l}</button>
             ))}
@@ -415,6 +448,14 @@ export default function Portfolio() {
               {theme === "light" ? "🌙 Dark" : "☀️ Light"}
             </button>
           </div>
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            className={`nav-hamburger${menuOpen ? " open" : ""}`}
+            onClick={() => setMenuOpen(o => !o)}
+          >
+            <span /><span /><span />
+          </button>
         </div>
       </nav>
 
@@ -527,8 +568,8 @@ export default function Portfolio() {
 
           {/* Featured project */}
           <FadeIn>
-            <div className="card" style={{ padding: "36px 40px", marginBottom: 24, borderLeft: "4px solid #6366f1" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 20, alignItems: "flex-start" }}>
+            <div className="card featured-card" style={{ padding: "36px 40px", marginBottom: 24, borderLeft: "4px solid #6366f1" }}>
+              <div className="featured-grid" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 20, alignItems: "flex-start" }}>
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
                     <span className="featured-badge">⭐ Featured</span>
@@ -549,7 +590,7 @@ export default function Portfolio() {
                     <a href={PROJECTS[0].demo} target="_blank" rel="noopener noreferrer" className="btn-sm btn-sm-ghost" style={{ textDecoration: "none", display: "inline-block" }}>↗ Live Demo</a>
                   </div>
                 </div>
-                <div style={{ fontSize: "3.5rem", opacity: 0.15, userSelect: "none" }}>🔬</div>
+                <div className="featured-icon" style={{ fontSize: "3.5rem", opacity: 0.15, userSelect: "none" }}>🔬</div>
               </div>
             </div>
           </FadeIn>
