@@ -285,8 +285,21 @@ export default function Portfolio() {
           border: var(--card-border);
           box-shadow: 0 2px 16px rgba(99,102,241,0.06);
           transition: all 0.28s;
+          min-width: 0;
+          overflow-wrap: break-word;
+          word-break: break-word;
         }
         .card:hover { box-shadow: 0 8px 32px rgba(99,102,241,0.13); transform: translateY(-4px); }
+        .projects-grid, .skills-grid, .featured-grid {
+          min-width: 0;
+        }
+        .projects-grid > *, .skills-grid > *, .featured-grid > * {
+          min-width: 0;
+        }
+        .card p, .card h3, .guidelines-box {
+          overflow-wrap: break-word;
+          word-break: break-word;
+        }
         .skill-pill {
           background: rgba(99,102,241,0.12); color: var(--text-accent); border-radius: 100px;
           padding: 6px 14px; font-size: 0.8rem; font-weight: 500;
