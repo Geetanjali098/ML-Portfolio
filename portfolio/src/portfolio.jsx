@@ -333,6 +333,7 @@ export default function Portfolio() {
           padding: 22px 28px; display: flex; align-items: center; gap: 16px;
           text-decoration: none; color: inherit; transition: all 0.22s;
           box-shadow: 0 2px 10px rgba(99,102,241,0.05);
+          overflow: hidden;
         }
         .contact-card:hover {
           border-color: #a5b4fc; box-shadow: 0 6px 24px rgba(99,102,241,0.12);
@@ -677,7 +678,7 @@ export default function Portfolio() {
               <FadeIn key={c.label} delay={i * 0.1}>
                 <a href={c.href} className="contact-card" target="_blank" rel="noopener noreferrer">
                   <div style={{ width: 46, height: 46, borderRadius: 12, background: activeTheme.contactIconBg, border: activeTheme.contactIconBorder, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", fontWeight: 700, color: activeTheme.contactIconColor, flexShrink: 0 }}>{c.icon}</div>
-                  <div style={{ textAlign: "left" }}>
+                  <div style={{ textAlign: "left", flex: 1, minWidth: 0 }}>
                     <p style={{ fontWeight: 600, color: activeTheme.textPrimary, marginBottom: 2 }}>{c.label}</p>
                     <p style={{ fontSize: "0.82rem", color: activeTheme.textMeta }}>{c.sub}</p>
                   </div>
