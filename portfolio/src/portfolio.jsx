@@ -5,10 +5,10 @@ const NAV_LINKS = ["About", "Skills", "Projects", "Contact"];
 const GITHUB_URL = "https://github.com/Geetanjali098";
 
 const SKILLS = {
-  "Programming": ["Python"],
-  "Machine Learning Concepts & tools": ["Scikit-learn", "NLP (TF-IDF)", "Text Classification", "Predictive Modeling", "Recommendation Systems"],
+  "Programming": ["Python","SQL"],
+  "Machine Learning Concepts & tools": ["Scikit-learn", "NLP (TF-IDF)", "Text Classification", "Predictive Modeling", "Recommendation Systems","Supervised and Unsupervised Learning","Feature Engineering"],
   "Data": ["Data Analysis", "Data Cleaning"],
-  "Tools & Technologies": ["Streamlit", "FastAPI", "React (Basic)", "Git & GitHub"],
+  "Tools & Technologies": ["Streamlit", "FastAPI", "React (Basic)", "Git & GitHub" ,"Google Workspace","Jupyter","VSCode"],
 };
 
 const PROJECTS = [
