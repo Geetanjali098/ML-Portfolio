@@ -537,9 +537,10 @@ export default function Portfolio() {
                 Practical AI,<br />Not Just Theory
               </h2>
               <p style={{ color: activeTheme.textSecondary, lineHeight: 1.85, fontSize: "1rem", marginBottom: 20 }}>
-             I'm an Information Technology student at SSTC Bhilai with an expected graduation in 2026, and I'm passionate about machine learning and artificial intelligence.
-             Over the past few years, I've focused on building practical ML projects to strengthen my skills in Python, data analysis, machine learning, and deep learning. 
-             My work goes beyond following tutorials — each project I've built addresses a real problem, from detecting fraud to analyzing skill gaps with NLP.
+           I'm an Information Technology student at SSTC Bhilai, currently pursuing my B.Tech degree, with a genuine passion for machine learning and artificial intelligence.
+           Over the past few years, I've focused on building practical, end-to-end ML projects to strengthen my skills in Python, data analysis, machine learning, and deep learning.
+           My work goes beyond following tutorials — each project I've built solves a real problem, from detecting fraud and recommending products to analyzing skill gaps with NLP.
+           I enjoy the full journey from idea to deployment, and I'm always looking for the next problem worth solving.
               </p>
               <p style={{ color: activeTheme.textSecondary, lineHeight: 1.85, fontSize: "1rem" }}>
                 I'm currently looking for a Machine Learning Internship where I can apply my knowledge, learn from experienced professionals, and contribute to real-world projects while growing as an engineer.
