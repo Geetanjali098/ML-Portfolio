@@ -543,7 +543,7 @@ export default function Portfolio() {
            I enjoy the full journey from idea to deployment, and I'm always looking for the next problem worth solving.
               </p>
               <p style={{ color: activeTheme.textSecondary, lineHeight: 1.85, fontSize: "1rem" }}>
-                I'm currently looking for a Machine Learning Internship where I can apply my knowledge, learn from experienced professionals, and contribute to real-world projects while growing as an engineer.
+                I'm currently looking for a Machine Learning ,AIML and Software Development Internship where I can apply my knowledge, learn from experienced professionals, and contribute to real-world projects while growing as an engineer.
               </p>
             </FadeIn>
           </div>
@@ -667,7 +667,7 @@ export default function Portfolio() {
             <p className="section-label" style={{ marginBottom: 12 }}>Get In Touch</p>
             <h2 className="section-title" style={{ marginBottom: 16 }}>Let's Connect</h2>
             <p style={{ color: activeTheme.textMuted, lineHeight: 1.8, marginBottom: 48 }}>
-              I'm open to ML, AI, and Data Science internship opportunities. Feel free to reach out.
+              I'm open to ML, AIML, and Software Development internship opportunities. Feel free to reach out.
             </p>
           </FadeIn>
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
