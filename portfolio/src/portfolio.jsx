@@ -6,9 +6,10 @@ const GITHUB_URL = "https://github.com/Geetanjali098";
 
 const SKILLS = {
   "Programming": ["Python"],
-  "Machine Learning Concepts & tools": ["Scikit-learn", "NLP (TF-IDF)", "Text Classification", "Predictive Modeling", "Recommendation Systems","Supervised and Unsupervised Learning","Feature Engineering"],
-  "Data": ["Data Analysis", "Data Cleaning"],
-  "Tools & Technologies": ["Streamlit", "FastAPI", "React (Basic)", "Git & GitHub" ,"Google Workspace","Jupyter","VSCode"],
+  "Core Competencies": ["Machine Learning", "NLP", "Deep Learning", "Prompt Engineering", "Agentic Design Pattern","Data Science","System Architecture"],
+  "ML/NLP Framework": ["Scikit-Learn", "Pandas", "Numpy", "Tensorflow","Pytorch","SpaCy"],
+  "Deployment & Tools": ["Streamlit", "FastAPI", "React", "Git & GitHub" ,"Docker","HuggingFace","Vercel"],
+  "LLM Stack":["Claude", "Google's Gemini", "TF-IDF retrieval cosine similarity matching", "Prompt Design Foundations"]
 };
 
 const PROJECTS = [
