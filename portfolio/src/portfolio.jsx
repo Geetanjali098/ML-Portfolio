@@ -5,8 +5,8 @@ const NAV_LINKS = ["About", "Skills", "Projects", "Contact"];
 const GITHUB_URL = "https://github.com/Geetanjali098";
 
 const SKILLS = {
-  "Programming": ["Python", "SQL"],
-  "Core Competencies": ["Machine Learning", "NLP", "Deep Learning", "Prompt Engineering", "Agentic Design Pattern","Data Science","System Architecture"],
+  "Programming": ["Python"],
+  "Core Competencies": ["Machine Learning", "NLP", "Deep Learning", "Prompt Engineering","Data Science","System Architecture"],
   "ML/NLP Framework": ["Scikit-Learn", "Pandas", "Numpy", "Tensorflow","Pytorch","SpaCy"],
   "Deployment & Tools": ["Streamlit", "FastAPI", "React", "Git & GitHub" ,"Docker","HuggingFace","Vercel"],
   "LLM Stack":["Claude", "Google's Gemini", "TF-IDF retrieval cosine similarity matching", "Prompt Design Foundations"]
