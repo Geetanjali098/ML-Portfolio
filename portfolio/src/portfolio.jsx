@@ -493,7 +493,7 @@ export default function Portfolio() {
           </h1>
 
           <p style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.35rem)", color: activeTheme.textSecondary, marginBottom: 20, letterSpacing: "-0.01em" }}>
-            Machine Learning Enthusiast
+           
           </p>
 
           <p style={{ fontSize: "1.05rem", color: activeTheme.textMuted, lineHeight: 1.75, maxWidth: 540, margin: "0 auto 20px", fontWeight: 400 }}>
