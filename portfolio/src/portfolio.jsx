@@ -9,7 +9,7 @@ const SKILLS = {
   "Core Competencies": ["Machine Learning", "NLP", "Deep Learning", "Prompt Engineering","Data Science","System Architecture"],
   "ML/NLP Framework": ["Scikit-Learn", "Pandas", "Numpy", "Tensorflow","Pytorch","SpaCy"],
   "Deployment & Tools": ["Streamlit", "FastAPI", "React", "Git & GitHub" ,"Docker","HuggingFace","Vercel"],
-  "LLM Stack":["Claude", "Google's Gemini", "TF-IDF retrieval cosine similarity matching", "Prompt Design Foundations"]
+  "LLM Stack":["Claude", "TF-IDF retrieval cosine similarity matching", "Prompt Design Foundations"]
 };
 
 const PROJECTS = [
@@ -544,7 +544,7 @@ export default function Portfolio() {
            I enjoy the full journey from idea to deployment, and I'm always looking for the next problem worth solving.
               </p>
               <p style={{ color: activeTheme.textSecondary, lineHeight: 1.85, fontSize: "1rem" }}>
-                I'm currently looking for a Machine Learning ,AIML and Software Development Internship where I can apply my knowledge, learn from experienced professionals, and contribute to real-world projects while growing as an engineer.
+                I'm currently looking for a Machine Learning ,AIML and Data Science Internship where I can apply my knowledge, learn from experienced professionals, and contribute to real-world projects while growing as an engineer.
               </p>
             </FadeIn>
           </div>
