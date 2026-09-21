@@ -673,8 +673,7 @@ export default function Portfolio() {
           </FadeIn>
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
             {[
-              { icon: "⎇", label: "GitHub", sub: "github.com/Geetanjali098", href: GITHUB_URL },
-              { icon: "in", label: "LinkedIn", sub: "linkedin.com/in/Geetanjali Nishad", href: "https://www.linkedin.com/in/geetanjali-n-a07575363" },
+              { icon: "⎇", label: "GitHub", sub: "github.com/Geetanjali098", href: GITHUB_URL },  
               { icon: "✉", label: "Email", sub: "geetanjalinishad0109@gmail.com", href: "mailto:geetanjalinishad0109@gmail.com" },
             ].map((c, i) => (
               <FadeIn key={c.label} delay={i * 0.1}>
